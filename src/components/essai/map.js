@@ -13,6 +13,7 @@ const Map = () => {
     map,
   } = useInfoStore();
   const { updateMapClicked } = mapStore();
+  const { updateAddress } = useInfoStore();
   const [selectedMap, setSelectedMap] = useState("");
   return (
     <motion.div
@@ -38,10 +39,13 @@ const Map = () => {
       ></iframe>
       <div className="bg-zinc-100 ml-1 absolute top-0 h-[35rem] w-[28rem] mt-10">
         <p className="text-center border-b border-black text-sm">{address}</p>
-        <div className="fixed flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           {cityInfo[sec - 1]?.sections.map((bb, ik) => (
             <div
-              onClick={() => setSelectedMap(bb.map)}
+              onClick={() => {
+                setSelectedMap(bb.map);
+                updateAddress(bb.address);
+              }}
               key={bb.sec}
               className="hover:bg-white pl-2 w-[28rem] py-5"
             >
