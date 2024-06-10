@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInfoStore } from "../../store/essai/carInfo";
 import { cityInfo } from "../../data/address";
@@ -13,6 +13,7 @@ const Map = () => {
     map,
   } = useInfoStore();
   const { updateMapClicked } = mapStore();
+  const [selectedMap, setSelectedMap] = useState("");
   return (
     <motion.div
       initial={{
@@ -25,11 +26,11 @@ const Map = () => {
         top: done ? "2%" : "100%",
         opacity: done ? 1 : 0,
       }}
-      className="relative bg-white w-full h-full py-3 mt-24"
+      className="relative bg-white w-full h-full z-50 py-3 mt-24"
     >
       <p>SÉLECTIONNEZ UN DE NOS DISTRIBUTEURS</p>
       <iframe
-        src={map}
+        src={selectedMap === "" ? map : selectedMap}
         className="max-w-7xl w-full h-[40rem]"
         allowfullscreen=""
         loading="lazy"
@@ -39,7 +40,11 @@ const Map = () => {
         <p className="text-center border-b border-black text-sm">{address}</p>
         <div className="fixed flex flex-col gap-4">
           {cityInfo[sec - 1]?.sections.map((bb, ik) => (
-            <div key={bb.sec} className="hover:bg-white pl-2 w-[28rem] py-5">
+            <div
+              onClick={() => setSelectedMap(bb.map)}
+              key={bb.sec}
+              className="hover:bg-white pl-2 w-[28rem] py-5"
+            >
               <p className="semi ">
                 {ik + 1}-{bb.label}
               </p>
