@@ -7,7 +7,7 @@ import Devis from "./components/devis";
 function App() {
   const { updateStatus, status } = useStatusStore();
   return (
-    <div className="relative overflow-y-clip max-h-screen h-screen">
+    <div className="relative">
       <div className="flex justify-center max-w-xl mx-auto py-5">
         {statusInfo.map((hi) => (
           <button
