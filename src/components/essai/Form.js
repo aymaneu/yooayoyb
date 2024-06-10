@@ -23,6 +23,7 @@ const Form = () => {
     profilage,
     done,
     map,
+    label,
     updateCivilité,
     updatePrénom,
     updateNom,
@@ -30,6 +31,7 @@ const Form = () => {
     updateTel,
     updateAddress,
     updateCallType,
+    updateLabel,
     updateSiren,
     updateMarketing,
     updateCommunication,
@@ -154,6 +156,7 @@ const Form = () => {
                           updateAddress(file.address);
                           setSec(file.sec);
                           setMap(file.map);
+                          updateLabel(file.label);
                         }}
                         key={file.label}
                         className="semi text-xs text-start cursor-pointer py-2 line-clamp-1 bg-[#F4F4F4]"

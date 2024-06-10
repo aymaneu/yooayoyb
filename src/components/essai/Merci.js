@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { mapStore } from "../../store/essai/map";
+import { useInfoStore } from "../../store/essai/carInfo";
 
 const Merci = () => {
   const { mapClicked } = mapStore();
-
+  const { prénom, nom, label, address } = useInfoStore();
   return (
     <motion.div
       initial={{
@@ -21,13 +22,13 @@ const Merci = () => {
     >
       <div>
         <h1 className="semi text-xl md:text-2xl">
-          Merci PRENOM NOM de l&apos;intérêt que vous portez à notre marque.
+          Merci {prénom} {nom} de l&apos;intérêt que vous portez à notre marque.
         </h1>
         <p className="semi">Votre demande a été enregistrée.</p>
         <br />
         <br />
-        <p className="semi text-lg">*Nom de DISTRIBUTEUR*</p>
-        <p className="semi text-lg">*Adresse de DISTRIBUTEUR*</p>
+        <p className="semi text-lg">{label}</p>
+        <p className="semi text-lg">{address}</p>
       </div>
       <div className="flex justify-center items-center pt-10">
         <h2 className="semi font-bold">Quoi d'autre?</h2>

@@ -8,6 +8,7 @@ export const useInfoStore = create((set) => ({
   tel: "",
   address: "",
   callType: "",
+  label: "",
   siren: null,
   marketing: null,
   profilage: null,
@@ -24,6 +25,7 @@ export const useInfoStore = create((set) => ({
   updateCallType: (callType) => set(() => ({ callType: callType })),
   updateSiren: (siren) => set(() => ({ siren: siren })),
   updateMarketing: (marketing) => set(() => ({ marketing: marketing })),
+  updateLabel: (label) => set(() => ({ label: label })),
   updateProfilage: (profilage) => set(() => ({ profilage: profilage })),
   updateDone: (done) => set(() => ({ done: done })),
   updateCommunication: (communication) =>
