@@ -21,6 +21,7 @@ const Form = () => {
     marketing,
     communication,
     profilage,
+    done,
     updateCivilité,
     updatePrénom,
     updateNom,
@@ -32,6 +33,7 @@ const Form = () => {
     updateMarketing,
     updateCommunication,
     updateProfilage,
+    updateDone,
   } = useInfoStore();
   const fixedData = cityInfo.flatMap((items) => items.sections);
   const filteredPeople =
@@ -284,7 +286,10 @@ const Form = () => {
               </a>
             </div>
           </div>
-          <button className="semi h-12 text-white px-7 bg-[#ba0816] mt-14 flex items-center justify-center">
+          <button
+            onClick={() => updateDone(true)}
+            className="semi h-12 text-white px-7 bg-[#ba0816] mt-14 flex items-center justify-center"
+          >
             ÉTAPE SUIVANTE
             <RiArrowRightSLine size={23} />
           </button>

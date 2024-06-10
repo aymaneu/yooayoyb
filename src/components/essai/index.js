@@ -5,10 +5,12 @@ import Map from "./map";
 import { cn } from "../../utils/cn";
 import { useCarStore } from "../../store/essai/car";
 import { useStatusStore } from "../../store/status";
+import { useInfoStore } from "../../store/essai/carInfo";
 
 const Index = () => {
   const { car } = useCarStore();
   const { updateStatus, status } = useStatusStore();
+  const { done } = useInfoStore();
   return (
     <div className="relative overflow-y-clip max-h-screen h-screen">
       <div className="max-w-2xl relative mx-auto">
@@ -20,7 +22,7 @@ const Index = () => {
                   className={cn(
                     "bg-zinc-500 z-20 w-8 h-8 relative rounded-full",
                     car !== "" && idx === 1 ? "bg-zinc-900" : "",
-                    true && idx === 2 ? "bg-zinc-900" : "",
+                    done && idx === 2 ? "bg-zinc-900" : "",
                     idx === 0 ? "bg-zinc-900" : ""
                   )}
                 >

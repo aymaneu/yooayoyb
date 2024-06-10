@@ -12,6 +12,7 @@ export const useInfoStore = create((set) => ({
   marketing: null,
   profilage: null,
   communication: null,
+  done: null,
   updateCivilité: (civilité) => set(() => ({ civilité: civilité })),
   updatePrénom: (prénom) => set(() => ({ prénom: prénom })),
   updateNom: (nom) => set(() => ({ nom: nom })),
@@ -22,6 +23,7 @@ export const useInfoStore = create((set) => ({
   updateSiren: (siren) => set(() => ({ siren: siren })),
   updateMarketing: (marketing) => set(() => ({ marketing: marketing })),
   updateProfilage: (profilage) => set(() => ({ profilage: profilage })),
+  updateDone: (done) => set(() => ({ done: done })),
   updateCommunication: (communication) =>
     set(() => ({ communication: communication })),
 }));
