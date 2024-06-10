@@ -13,6 +13,7 @@ export const useInfoStore = create((set) => ({
   profilage: null,
   communication: null,
   done: null,
+  sec: "",
   updateCivilité: (civilité) => set(() => ({ civilité: civilité })),
   updatePrénom: (prénom) => set(() => ({ prénom: prénom })),
   updateNom: (nom) => set(() => ({ nom: nom })),
@@ -26,4 +27,5 @@ export const useInfoStore = create((set) => ({
   updateDone: (done) => set(() => ({ done: done })),
   updateCommunication: (communication) =>
     set(() => ({ communication: communication })),
+  setSec: (sec) => set(() => ({ sec: sec })),
 }));

@@ -34,6 +34,7 @@ const Form = () => {
     updateCommunication,
     updateProfilage,
     updateDone,
+    setSec,
   } = useInfoStore();
   const fixedData = cityInfo.flatMap((items) => items.sections);
   const filteredPeople =
@@ -148,6 +149,8 @@ const Form = () => {
                         onClick={() => {
                           setQuery(file.address);
                           setClicked(false);
+                          updateAddress(file.address);
+                          setSec(file.sec);
                         }}
                         key={file.label}
                         className="semi text-xs text-start cursor-pointer py-2 line-clamp-1 bg-[#F4F4F4]"
