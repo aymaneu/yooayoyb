@@ -47,6 +47,7 @@ const Form = () => {
       : fixedData.filter((person) => {
           return person.address.toLowerCase().includes(query.toLowerCase());
         });
+  console.log(query);
   return (
     <motion.div
       initial={{
@@ -138,16 +139,16 @@ const Form = () => {
                 placeholder="CODE POSTAL*"
                 className="semi bg-[#F4F4F4] w-full border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
               />
-              <div
-                className={cn(
-                  "z-50 absolute divide-y w-full bg-white",
-                  filteredPeople.length > 0 && clicked
-                    ? "border-2 border-black"
-                    : ""
-                )}
-              >
-                {clicked &&
-                  filteredPeople.map((file) => {
+              {clicked && query !== "" && (
+                <div
+                  className={cn(
+                    "z-50 absolute divide-y w-full bg-white",
+                    filteredPeople.length > 0 && clicked
+                      ? "border-2 border-black"
+                      : ""
+                  )}
+                >
+                  {filteredPeople.map((file) => {
                     return (
                       <p
                         onClick={() => {
@@ -165,7 +166,8 @@ const Form = () => {
                       </p>
                     );
                   })}
-              </div>
+                </div>
+              )}
             </div>
             <select
               onChange={(e) => updateCallType(e.target.value)}

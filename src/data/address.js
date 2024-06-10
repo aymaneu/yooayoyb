@@ -81,18 +81,6 @@ export const cityInfo = [
     ],
   },
   {
-    city: "FES",
-    sections: [
-      {
-        label: "AUTO HALL",
-        address: "Rue de Libye Fès",
-        tel: "05 35 62 59 51",
-        sec: 6,
-        map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.070598211367!2d-5.063562699999999!3d34.0420601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda02006ebb2e96f%3A0xe295939a7d9f8404!2sauto%20hall!5e0!3m2!1sen!2sma!4v1718035982132!5m2!1sen!2sma",
-      },
-    ],
-  },
-  {
     city: "AGADIR",
     sections: [
       {
@@ -113,6 +101,18 @@ export const cityInfo = [
         tel: "05 36 52 40 20/30",
         sec: 8,
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.481277434618!2d-9.5206161!3d30.394084300000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3c97f5518cdc1%3A0x8e0cbb3a44459b0c!2sFenie%20Brossette!5e0!3m2!1sen!2sma!4v1718036057929!5m2!1sen!2sma",
+      },
+    ],
+  },
+  {
+    city: "FES",
+    sections: [
+      {
+        label: "AUTO HALL",
+        address: "Rue de Libye Fès",
+        tel: "05 35 62 59 51",
+        sec: 6,
+        map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.070598211367!2d-5.063562699999999!3d34.0420601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda02006ebb2e96f%3A0xe295939a7d9f8404!2sauto%20hall!5e0!3m2!1sen!2sma!4v1718035982132!5m2!1sen!2sma",
       },
     ],
   },
