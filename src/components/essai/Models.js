@@ -1,5 +1,5 @@
 import React from "react";
-import { useCarStore } from "../store/car";
+import { useCarStore } from "../../store/car";
 
 const Models = () => {
   const { car, updateCar } = useCarStore();

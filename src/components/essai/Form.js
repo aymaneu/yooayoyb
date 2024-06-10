@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { useCarStore } from "../store/car";
+import { useCarStore } from "../../store/car";
 const Form = () => {
   const { car, updateCar } = useCarStore();
 
