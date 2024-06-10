@@ -1,5 +1,5 @@
 import React from "react";
-import { useCarStore } from "../../store/essai/car";
+import { useCarStore } from "../../store/devis/car";
 
 const Models = () => {
   const { car, updateCar } = useCarStore();
@@ -49,6 +49,5 @@ const cars = [
   { image: "/Giulia.png", label: "Giulia" },
   { image: "/Stelvio.png", label: "Stelvio" },
   { image: "/Tonale.png", label: "Tonale" },
-  { image: "/Stelvio-Q.png", label: "Stelvio Quadrifoglio" },
-  { image: "/Giulia-Q.png", label: "Giulia Quadrifoglio" },
+  { image: "/Giulia-Q.png", label: "Tonale Hybride Rechargeable" },
 ];

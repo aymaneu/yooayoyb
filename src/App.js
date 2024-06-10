@@ -1,12 +1,10 @@
 import "./App.css";
-import { useCarStore } from "./store/car";
 import { useStatusStore } from "./store/status";
 import { cn } from "./utils/cn";
 import Essai from "./components/essai";
 import Brochure from "./components/brochure";
 import Devis from "./components/devis";
 function App() {
-  const { car } = useCarStore();
   const { updateStatus, status } = useStatusStore();
   return (
     <div className="relative overflow-y-clip max-h-screen h-screen">
