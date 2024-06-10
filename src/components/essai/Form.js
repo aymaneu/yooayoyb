@@ -1,10 +1,22 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useCarStore } from "../../store/essai/car";
+import { cityInfo } from "../../data/address";
+import { cn } from "../../utils/cn";
 const Form = () => {
   const { car, updateCar } = useCarStore();
-
+  const [query, setQuery] = useState("");
+  const [clicked, setClicked] = useState("");
+  const fixedData = cityInfo.flatMap((items) => items.sections);
+  console.log(fixedData);
+  const filteredPeople =
+    query === ""
+      ? []
+      : fixedData.filter((person) => {
+          return person.address.toLowerCase().includes(query.toLowerCase());
+        });
+  console.log(filteredPeople);
   return (
     <motion.div
       initial={{
@@ -77,11 +89,40 @@ const Form = () => {
               placeholder="TELEPHONE*"
               className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
             />
-            <input
-              type="text"
-              placeholder="CODE POSTAL*"
-              className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
-            />
+            <div className="relative w-full border">
+              <input
+                onClick={() => setClicked(true)}
+                onChange={(e) => setQuery(e.target.value)}
+                type="text"
+                value={query}
+                placeholder="CODE POSTAL*"
+                className="semi bg-[#F4F4F4] w-full border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
+              />
+              <div
+                className={cn(
+                  "z-50 absolute divide-y w-full bg-white",
+                  filteredPeople.length > 0 && clicked
+                    ? "border-2 border-black"
+                    : ""
+                )}
+              >
+                {clicked &&
+                  filteredPeople.map((file) => {
+                    return (
+                      <p
+                        onClick={() => {
+                          setQuery(file.address);
+                          setClicked(false);
+                        }}
+                        key={file.label}
+                        className="semi text-xs text-start cursor-pointer py-2 line-clamp-1 bg-[#F4F4F4]"
+                      >
+                        {file.address}
+                      </p>
+                    );
+                  })}
+              </div>
+            </div>
             <select className="semi bg-[#F4F4F4] border border-black h-12 ">
               <option hidden className="pl-2">
                 MOYENNE DE CONTACT SOUHAITÉ
