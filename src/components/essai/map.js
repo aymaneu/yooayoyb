@@ -2,37 +2,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInfoStore } from "../../store/essai/carInfo";
 import { cityInfo } from "../../data/address";
+import { mapStore } from "../../store/essai/map";
 const Map = () => {
   const {
-    civilité,
-    prénom,
-    nom,
-    email,
-    tel,
     address,
-    callType,
-    siren,
-    marketing,
-    communication,
-    profilage,
+
     done,
     sec,
-    updateCivilité,
-    updatePrénom,
-    updateNom,
-    updateEmail,
-    updateTel,
-    updateAddress,
-    updateCallType,
-    updateSiren,
-    updateMarketing,
-    updateCommunication,
-    updateProfilage,
-    updateDone,
-    setSec,
+
     map,
   } = useInfoStore();
-
+  const { updateMapClicked } = mapStore();
   return (
     <motion.div
       initial={{
@@ -59,7 +39,7 @@ const Map = () => {
         <p className="text-center border-b border-black text-sm">{address}</p>
         <div className="fixed flex flex-col gap-4">
           {cityInfo[sec - 1]?.sections.map((bb, ik) => (
-            <div key={bb.sec} className="hover:bg-white w-[28rem] py-5">
+            <div key={bb.sec} className="hover:bg-white pl-2 w-[28rem] py-5">
               <p className="semi ">
                 {ik + 1}-{bb.label}
               </p>
@@ -67,7 +47,10 @@ const Map = () => {
                 Services : Business Center | Spécialiste
               </p>
               <p>{bb.address}</p>
-              <button className="bg-[#292B35] text-white px-4 py-2">
+              <button
+                onClick={() => updateMapClicked(true)}
+                className="bg-[#292B35] text-white px-4 py-2"
+              >
                 SÉLECTIONNER
               </button>
             </div>

@@ -6,11 +6,14 @@ import { cn } from "../../utils/cn";
 import { useCarStore } from "../../store/essai/car";
 import { useStatusStore } from "../../store/status";
 import { useInfoStore } from "../../store/essai/carInfo";
+import Merci from "./Merci";
+import { mapStore } from "../../store/essai/map";
 
 const Index = () => {
   const { car } = useCarStore();
   const { updateStatus, status } = useStatusStore();
   const { done } = useInfoStore();
+  const { mapClicked } = mapStore();
   return (
     <div className="relative overflow-y-clip max-h-screen h-screen">
       <div className="max-w-2xl relative mx-auto">
@@ -41,7 +44,8 @@ const Index = () => {
       </div>
       <Models />
       {!done && <Form />}
-      <Map />
+      {!mapClicked && <Map />}
+      {mapClicked && <Merci />}
     </div>
   );
 };
