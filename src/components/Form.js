@@ -14,10 +14,10 @@ const Form = () => {
         opacity: 0,
       }}
       animate={{
-        top: car !== "" ? "16%" : "100%",
+        top: car !== "" ? "20%" : "100%",
         opacity: car !== "" ? 1 : 0,
       }}
-      className="grid z-40 bg-white w-full grid-cols-3 px-10 md:px-20 py-20"
+      className="grid z-40 bg-white w-full grid-cols-3 px-10 md:px-20 pb-20 pt-2"
     >
       <div className="col-span-3 md:col-span-1">
         <h2>Votre sélection:</h2>
@@ -27,6 +27,7 @@ const Form = () => {
         <img
           src={cars.filter((cr) => cr.label === car)[0]?.image}
           className="w-80"
+          alt="info"
         />
         <button
           onClick={() => updateCar("")}

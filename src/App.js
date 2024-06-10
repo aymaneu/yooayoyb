@@ -2,13 +2,28 @@ import "./App.css";
 import Form from "./components/Form";
 import Models from "./components/Models";
 import { useCarStore } from "./store/car";
+import { useStatusStore } from "./store/status";
 import { cn } from "./utils/cn";
 
 function App() {
   const { car } = useCarStore();
-
+  const { updateStatus, status } = useStatusStore();
   return (
     <div className="relative overflow-y-clip max-h-screen h-screen">
+      <div className="flex justify-center max-w-xl mx-auto py-5">
+        {statusInfo.map((hi) => (
+          <button
+            onClick={() => updateStatus(hi)}
+            key={hi}
+            className={cn(
+              "py-2 w-full cursor-pointer",
+              status === hi ? "text-white bg-[#292B35]" : ""
+            )}
+          >
+            {hi}
+          </button>
+        ))}
+      </div>
       <div className="max-w-2xl relative mx-auto">
         <div className="flex z-20  justify-between">
           {stepsLabel.map((lab, idx) => {
@@ -47,3 +62,5 @@ const stepsLabel = [
   { label: "VOS COORDONNÉES" },
   { label: "DISTRIBUTEUR" },
 ];
+
+const statusInfo = ["Essai", "Devis", "Brochure"];
