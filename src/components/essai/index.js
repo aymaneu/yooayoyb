@@ -1,6 +1,7 @@
 import React from "react";
 import Models from "./Models";
 import Form from "./Form";
+import Map from "./map";
 import { cn } from "../../utils/cn";
 import { useCarStore } from "../../store/essai/car";
 import { useStatusStore } from "../../store/status";
@@ -19,6 +20,7 @@ const Index = () => {
                   className={cn(
                     "bg-zinc-500 z-20 w-8 h-8 relative rounded-full",
                     car !== "" && idx === 1 ? "bg-zinc-900" : "",
+                    true && idx === 2 ? "bg-zinc-900" : "",
                     idx === 0 ? "bg-zinc-900" : ""
                   )}
                 >
@@ -35,8 +37,9 @@ const Index = () => {
         </div>
         <div className="h-[2px] w-full top-1/2 z-10 -translate-y-1/2 absolute bg-zinc-950" />
       </div>
-      <Models />
-      <Form />
+      {/* <Models />
+      <Form /> */}
+      <Map />
     </div>
   );
 };

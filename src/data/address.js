@@ -69,7 +69,7 @@ export const cityInfo = [
     sections: [
       {
         label: "AUTO HALL",
-        address: " Rue de Libye Fès",
+        address: "Rue de Libye Fès",
         tel: "05 35 62 59 51",
       },
     ],
