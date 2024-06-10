@@ -14,6 +14,7 @@ export const useInfoStore = create((set) => ({
   communication: null,
   done: null,
   sec: "",
+  map: "",
   updateCivilité: (civilité) => set(() => ({ civilité: civilité })),
   updatePrénom: (prénom) => set(() => ({ prénom: prénom })),
   updateNom: (nom) => set(() => ({ nom: nom })),
@@ -28,4 +29,5 @@ export const useInfoStore = create((set) => ({
   updateCommunication: (communication) =>
     set(() => ({ communication: communication })),
   setSec: (sec) => set(() => ({ sec: sec })),
+  setMap: (map) => set(() => ({ map: map })),
 }));
