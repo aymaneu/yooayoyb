@@ -46,7 +46,7 @@ const Form = () => {
         opacity: 0,
       }}
       animate={{
-        top: car !== "" ? "20%" : "100%",
+        top: car !== "" ? "12%" : "100%",
         opacity: car !== "" ? 1 : 0,
       }}
       className="grid z-40 bg-white w-full grid-cols-3 px-10 md:px-20 pb-20 pt-2"
