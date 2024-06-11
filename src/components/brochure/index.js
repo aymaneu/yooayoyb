@@ -3,10 +3,13 @@ import Models from "./Models";
 import Form from "./Form";
 import { cn } from "../../utils/cn";
 import { useCarStore } from "../../store/brochure/car";
+import Merci from "./merci";
 import { useStatusStore } from "../../store/status";
+import { useInfoStore } from "../../store/brochure/carInfo";
 
 const Index = () => {
   const { car } = useCarStore();
+  const { done } = useInfoStore();
   return (
     <div className="relative overflow-y-clip max-h-screen h-screen">
       <div className="max-w-2xl relative mx-auto">
@@ -36,14 +39,11 @@ const Index = () => {
       </div>
       <Models />
       <Form />
+      {done && <Merci />}
     </div>
   );
 };
 
 export default Index;
 
-const stepsLabel = [
-  { label: "MODÈLE" },
-  { label: "VOS COORDONNÉES" },
-  { label: "DISTRIBUTEUR" },
-];
+const stepsLabel = [{ label: "MODÈLE" }, { label: "VOS COORDONNÉES" }];
