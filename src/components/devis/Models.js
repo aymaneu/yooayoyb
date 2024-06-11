@@ -49,5 +49,6 @@ const cars = [
   { image: "/Giulia.png", label: "Giulia" },
   { image: "/Stelvio.png", label: "Stelvio" },
   { image: "/Tonale.png", label: "Tonale" },
-  { image: "/Giulia-Q.png", label: "Tonale Hybride Rechargeable" },
+  { image: "/Stelvio-Q.png", label: "Stelvio Quadrifoglio" },
+  { image: "/Giulia-Q.png", label: "Giulia Quadrifoglio" },
 ];
