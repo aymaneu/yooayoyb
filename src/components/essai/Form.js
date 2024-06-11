@@ -10,20 +10,6 @@ const Form = () => {
   const [query, setQuery] = useState("");
   const [clicked, setClicked] = useState("");
   const {
-    civilité,
-    prénom,
-    nom,
-    email,
-    tel,
-    address,
-    callType,
-    siren,
-    marketing,
-    communication,
-    profilage,
-    done,
-    map,
-    label,
     updateCivilité,
     updatePrénom,
     updateNom,
@@ -47,7 +33,6 @@ const Form = () => {
       : fixedData.filter((person) => {
           return person.address.toLowerCase().includes(query.toLowerCase());
         });
-  console.log(query);
   return (
     <motion.div
       initial={{
@@ -81,11 +66,11 @@ const Form = () => {
       </div>
       <div className="col-span-3 md:col-span-2">
         <div>
-          <div className="grid grid-cols-2 gap-5 gap-x-10">
+          <div className="grid md:grid-cols-2 gap-5 gap-x-10">
             <div className="flex flex-col">
               <select
                 onChange={(e) => updateCivilité(e.target.value)}
-                className="semi bg-[#F4F4F4] border border-black h-12"
+                className="semi bg-[#F4F4F4] border border-black w-72 md:w-full h-12"
               >
                 <option className="semi pl-2" value="" hidden>
                   Civilité*
@@ -107,27 +92,27 @@ const Form = () => {
               type="text"
               onChange={(e) => updatePrénom(e.target.value)}
               placeholder="PRÉNOM*"
-              className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
+              className="semi bg-[#F4F4F4] border w-72 md:w-full border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
             />
             <input
               onChange={(e) => updateNom(e.target.value)}
               type="text"
               placeholder="NOM*"
-              className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
+              className="semi bg-[#F4F4F4] border w-72 md:w-full border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
             />
             <input
               onChange={(e) => updateEmail(e.target.value)}
               type="email"
               placeholder="E-MAIL*"
-              className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
+              className="semi bg-[#F4F4F4] border w-72 md:w-full border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
             />
             <input
               onChange={(e) => updateTel(e.target.value)}
               type="tel"
               placeholder="TELEPHONE*"
-              className="semi bg-[#F4F4F4] border border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
+              className="semi bg-[#F4F4F4] border w-72 md:w-full border-black h-12 pl-2 placeholder:text-black placeholder:pl-2"
             />
-            <div className="relative w-full border">
+            <div className="relative w-72 md:w-full border">
               <input
                 onClick={() => setClicked(true)}
                 onChange={(e) => {
@@ -171,7 +156,7 @@ const Form = () => {
             </div>
             <select
               onChange={(e) => updateCallType(e.target.value)}
-              className="semi bg-[#F4F4F4] border border-black h-12 "
+              className="semi bg-[#F4F4F4] border w-72 md:w-full border-black h-12 "
             >
               <option hidden className="pl-2">
                 MOYENNE DE CONTACT SOUHAITÉ
@@ -220,7 +205,7 @@ const Form = () => {
                 </a>
               </p>
             </div>
-            <div className="flex pt-3 items-center">
+            <div className="flex md:flex-row flex-col pt-3 md:items-center">
               <div className="flex items-center">
                 <input
                   value=""
@@ -231,7 +216,7 @@ const Form = () => {
                 />
                 <label className="semi pl-2">J&apos;ACCEPTE</label>
               </div>
-              <div className="flex items-center pl-20">
+              <div className="flex items-center md:pl-20">
                 <input
                   type="radio"
                   name="A"
@@ -241,11 +226,11 @@ const Form = () => {
                 />
                 <label className="semi pl-2">JE REFUSE</label>
               </div>
-              <a className="semi max-w-96 underline text-[7px] pl-20">
+              <a className="semi max-w-96 underline text-[7px] md:pl-20">
                 LES ACTIVITÉS DE MARKETING
               </a>
             </div>
-            <div className="flex pt-3 items-center">
+            <div className="flex md:flex-row flex-col pt-3 md:items-center">
               <div className="flex items-center">
                 <input
                   onClick={() => updateProfilage(true)}
@@ -256,7 +241,7 @@ const Form = () => {
                 />
                 <label className="semi pl-2">J&apos;ACCEPTE</label>
               </div>
-              <div className="flex items-center pl-20">
+              <div className="flex items-center md:pl-20">
                 <input
                   onClick={() => updateProfilage(false)}
                   type="radio"
@@ -266,11 +251,11 @@ const Form = () => {
                 />
                 <label className="semi pl-2">JE REFUSE</label>
               </div>
-              <a className="semi max-w-96 underline text-[7px] pl-20">
+              <a className="semi max-w-96 underline text-[7px] md:pl-20">
                 LES ACTIVITÉS DE PROFILAGE
               </a>
             </div>
-            <div className="flex pt-3 items-center">
+            <div className="flex md:flex-row flex-col pt-3 md:items-center">
               <div className="flex items-center">
                 <input
                   value=""
@@ -281,7 +266,7 @@ const Form = () => {
                 />
                 <label className="semi pl-2">J&apos;ACCEPTE</label>
               </div>
-              <div className="flex items-center pl-20">
+              <div className="flex items-center md:pl-20">
                 <input
                   type="radio"
                   name="C"
@@ -291,7 +276,7 @@ const Form = () => {
                 />
                 <label className="semi pl-2">JE REFUSE</label>
               </div>
-              <a className="semi max-w-96 underline text-[7px] pl-20">
+              <a className="semi max-w-96 underline text-[7px] md:pl-20">
                 LA COMMUNICATION DE MES DONNÉES À DES TIERS POUR LEURS ACTIVITÉS
                 DE MARKETING
               </a>

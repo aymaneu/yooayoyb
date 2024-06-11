@@ -12,13 +12,15 @@ import { mapStore } from "../../store/essai/map";
 const Index = () => {
   const { done } = useInfoStore();
   const { mapClicked } = mapStore();
+  const { car, updateCar } = useCarStore();
+
   return (
-    <div className="relative overflow-y-clip max-h-screen h-screen">
+    <div className="relative md:overflow-y-clip max-h-screen h-screen">
       <Steps />
-      <Models />
+      {car === "" && <Models />}
       {!done && <Form />}
-      {!mapClicked && <Map />}
-      {mapClicked && <Merci />}
+      {/* {!mapClicked && <Map />} */}
+      {/* {mapClicked && <Merci />} */}
     </div>
   );
 };
@@ -35,7 +37,7 @@ const Steps = () => {
   const { car } = useCarStore();
   const { done } = useInfoStore();
   return (
-    <div className="max-w-2xl relative mx-auto">
+    <div className="md:max-w-2xl max-w-xs relative mx-auto">
       <div className="flex z-20  justify-between">
         {stepsLabel.map((lab, idx) => {
           return (
@@ -52,7 +54,7 @@ const Steps = () => {
                   {idx + 1}
                 </p>
               </div>
-              <p className="mt-8 text-sm shrink-0 absolute left-1/2 -translate-x-1/2">
+              <p className="mt-8 text-[10px] text-center md:text-sm shrink-0 absolute left-1/2 -translate-x-1/2">
                 {lab.label}
               </p>
             </div>
